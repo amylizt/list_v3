@@ -1,44 +1,74 @@
-async function fetchlist (file) {
-    var response = await fetch(file);
-    var data = await response.json();
-    return data
+function createForm() {
+  fetch('question.json')
+    .then(res => res.json())
+    .then(data => {
+      var form = document.createElement('form');
+      data.questions.forEach(question => {
+        var p = document.createElement('p');
+        p.textContent = question.text;
+        form.appendChild(p);
+        if (question.type === 'dropdown') {
+          createDropdown(question, form);
+        } else if (question.type === 'text') {
+          createInput(question, form);
+        }
+      });
+      createSubmitButton(form);
+      document.body.appendChild(form);
+    });
 }
-  
-  function makeform (data) {
-    var br = document.createElement("br")
-    var form = document.createElement("form");
-    //var txt = document.createElement("p");
-    //console.table(data);
-    for (var i = 0; i < data.length; i++) {
-        value = data[i];
-        var ID = document.createElement("input")
-        var label = form.appendChild(document.createTextNode(value.subtext));
-        ID.setAttribute("type", value.type);
-        console.log(data[i].options);
-          for(var j = 0; j < data[i].length ; j++) {
-                console.table(data[i]);
-            for(var k = 0; k < 2 ; k++) {
-               // console.log(data[i]);
-            }
-            
-         var yes = document.createElement("input")
-         yes.setAttribute("type", "radio");
-         yes.setAttribute("name", "yesno");
-         yes.setAttribute("value", "Yes");
-        form.appendChild(label);
-        form.appendChild(br.cloneNode());
-        form.appendChild(ID);
-        form.appendChild(br.cloneNode());
-    }
-    document.getElementsByTagName("body")[0]
-    .appendChild(form);
-};
+
+
+function createDropdown(question, form) {
+  var select = document.createElement('select');
+  question.options.forEach(option => {
+    var optionElement = document.createElement('option');
+    optionElement.value = option.value;
+    optionElement.text = option.text;
+    select.appendChild(optionElement);
+    form.appendChild(select);
+});
 }
-  
 
-  async function main () {
-    var get =  await fetchlist('list3.json');
-    var build = makeform ( get );
-  }
 
-main()
+//Function 3
+function createInput(question, form) {
+  var input = document.createElement('input');
+  input.type = 'text';
+  input.placeholder = question.placeholder;
+  input.size = question.size;
+  form.appendChild(input);
+}
+
+//Function 4
+function createSubmitButton(form) {
+  var submitButton = document.createElement('input');
+  submitButton.type = 'submit';
+  submitButton.value = 'Submit';
+  form.appendChild(submitButton);
+  submitButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    createDataBox();
+  });
+}
+
+//Function 5
+function createDataBox() {
+  var dataBox = document.createElement('div');
+  dataBox.className = 'data-box';
+  document.body.appendChild(dataBox);
+  fetch('question1.json')
+    .then(res => res.json())
+    .then(data => {
+      data.questions.forEach((question, index) => {
+        var inputs = document.querySelectorAll('input, select');
+        var input = inputs[index];
+        var p = document.createElement('p');
+           p.innerHTML = `&#8226;&nbsp;&nbsp;${question.text}: <strong>${input.value}</strong>`;;
+          dataBox.appendChild(p);
+      });
+});
+}
+
+
+createForm();

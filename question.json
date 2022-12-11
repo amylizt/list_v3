@@ -1,7 +1,26 @@
+
 {
   "questions": [
     {
-      "text": "Would you like to have dinner?",
+      "text": "TMO Analyst (to request approval)",
+      "type": "text",
+      "placeholder": "Andy",
+      "size": 10 
+    },
+    {
+      "text": "Stream to which it relates (R1/R2/R3/DLC/ASW/etc.)",
+      "type": "text",
+      "placeholder": "R2",
+      "size": 10 
+    },
+    {
+      "text": "Description (make it as descriptive as possible)",
+      "type": "text",
+      "placeholder": "Description of Change",
+      "size": 100 
+    },
+    {
+      "text": "Is it an ACE mapping issue (in which case it will be MIRA or MIRMA)",
       "type": "dropdown",
       "options": [
         {
@@ -15,8 +34,122 @@
       ]
     },
     {
-      "text": "What shoes do you like?",
-      "type": "text"
+      "text": "Is there Power BI impact (in which case the LOE should cover only backend work, and timeline refers only to backend work)",
+      "type": "dropdown",
+      "options": [
+        {
+          "value": "yes",
+          "text": "Yes"
+        },
+        {
+          "value": "no",
+          "text": "No"
+        }
+      ]
+    },
+    {
+      "text": "Rule number(s) affected, if any",
+      "type": "text",
+      "placeholder": "CM_03",
+      "size": 10 
+    },
+    {
+      "text": "cVidya TL (Gali/Devendra/Amy/Bhushan/Tushar/ etc.)",
+      "type": "text",
+      "placeholder": "Amy",
+      "size": 10 
+    },
+    {
+      "text": "Sprint Target for development (in which sprint you think that you will be ready to develop, SP7/SP8/etc.)",
+      "type": "text",
+      "placeholder": "125",
+      "size": 10 
+    },
+    {
+      "text": "Release Target (Mar/Apr/etc. Can be the release where the sprint above goes to Production, or an earlier one if there is a request for down porting and feasibility to do it",
+      "type": "text",
+      "placeholder": "R5",
+      "size": 10 
+    },
+    {
+      "text": "If the MIR is going to be tested separate from the sprint, indicate the EBD",
+      "type": "text",
+      "placeholder": "R5",
+      "size": 10 
+    },
+    {
+      "text": "If the MIR is going to be tested separate from the sprint, indicate on which environment",
+      "type": "text",
+      "placeholder": "R5",
+      "size": 10 
+    },
+    {
+      "text": "Comment (if any, to be added to Remarks in the tracker)",
+      "type": "text",
+      "placeholder": "This is a comment to add",
+      "size": 100 
+    },
+    {
+      "text": "Do we have all the business logic to support the change",
+      "type": "dropdown",
+      "options": [
+        {
+          "value": "yes",
+          "text": "Yes"
+        },
+        {
+          "value": "no",
+          "text": "No"
+        }
+      ]
+    },
+    {
+      "text": "Do we have all required data, table access, etc.",
+      "type": "dropdown",
+      "options": [
+        {
+          "value": "yes",
+          "text": "Yes"
+        },
+        {
+          "value": "no",
+          "text": "No"
+        }
+      ]
+    },
+    {
+      "text": "Is there need for grooming sessions with business",
+      "type": "dropdown",
+      "options": [
+        {
+          "value": "yes",
+          "text": "Yes"
+        },
+        {
+          "value": "no",
+          "text": "No"
+        }
+      ]
+    },
+    {
+      "text": "If there is enough information, what is the LOE (can be changed later)",
+      "type": "text",
+      "placeholder": "3",
+      "size": 10 
+    },
+    {
+      "text": "Is there need (in your opinion) to submit formal design for sign-off?",
+      "type": "dropdown",
+      "options": [
+        {
+          "value": "yes",
+          "text": "Yes"
+        },
+        {
+          "value": "no",
+          "text": "No"
+        }
+      ]
     }
   ]
 }
