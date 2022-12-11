@@ -1,0 +1,24 @@
+[
+	{
+	  "title": "TMO Analyst",
+      "id": "TMO_ANALYST",
+      "subtext": "TMO Analyst (to request approval)",
+      "options":["Yes","No"],
+      "type": "radio" 
+	},
+    {
+      "title": "BUS",
+      "id": "BUS",
+      "subtext": "Do we have all the business logic to support the change:  ",
+      "options":["Yes","No"],
+      "type": "radio"       
+    },
+    {
+      "title": "Access",
+      "id": "Access",
+      "subtext": "Do we have all required data, table access, etc.:  ",
+      "options":["Yes","No"],
+      "type": "radio"     
+    }
+]
+

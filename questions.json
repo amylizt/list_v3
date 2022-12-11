@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "text": "Would you like to have dinner?",
+      "type": "dropdown",
+      "options": [
+        {
+          "value": "yes",
+          "text": "Yes"
+        },
+        {
+          "value": "no",
+          "text": "No"
+        }
+      ]
+    },
+    {
+      "text": "What shoes do you like?",
+      "type": "text"
+    }
+  ]
+}
